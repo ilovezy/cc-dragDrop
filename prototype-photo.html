@@ -82,11 +82,7 @@ $gallery.droppable({
 
 function deleteImage($item){
 	$item.fadeOut(function(){
-		var $list = $('ul', $trash).length ?
-			$('ul', $trash) :
-			$('<ul />').appendTo($trash)
-
-		$item.appendTo($list).fadeIn(function(){
+		$item.appendTo($trash).fadeIn(function(){
 			$item.fadeIn()
 		})
 	})
@@ -97,8 +93,6 @@ function recycleImage($item){
 		$item.appendTo($gallery).fadeIn()
 	})
 }
-
-// image deletion function
 
 </script>
 

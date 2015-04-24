@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1; user-scalable=no">
+<title>测试事件委托</title>
+<link rel="stylesheet" href="bootstrap-3.2.0-dist/css/bootstrap.min.css" />
+</head>
+
+<body>
+
+<div class="container">
+<h2 class="text-center">测试事件委托</h2>
+
+<ul id="draggableList" class="list-group">
+
+</ul>
+</div>
+
+<script src="jquery-1.11.1.min.js"></script>
+<script src="jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+<script src="bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+'use strict'
+
+var listItem = '<li class="list-group-item">a</li><li class="list-group-item">b</li><li class="list-group-item">c</li><li class="list-group-item">d</li><li class="list-group-item">e</li>'
+
+
+$('#draggableList').html(listItem)
+$('#draggableList li').draggable({
+	revert: 'invalid'
+})
+
+</script>
+
+</body>
+</html>
