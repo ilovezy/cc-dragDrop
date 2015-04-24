@@ -20,13 +20,20 @@ ul li{list-style: none}
 <pre>基础$('selector').draggable()<br />
 .draggable({
 	scroll: true, // or 'fine-tune'，设置浏览器滚动条是否跟随拖动超出可视区一起滚动 ,这个其实可有可无
+
 	scrollSensitivity: 100,
+
 	scrollSpeed: 200,
+
 	axis: 'x',
 	axis: 'y', //设置只能水平或者垂直移动
+
 	containment: 'parent', // 设置拖动区域，参数可以是 parent 或者直接.class #id
+
 	helper: 'true', // 设置是否在原地保留虚像（灵魂出窍）
+
 	cursor: 'move', // 鼠标样式
+
 	cursorAt: {top: 23, left:231, bottom:321 }, // 鼠标的相对坐标
 
 	// 对应的事件
@@ -41,9 +48,34 @@ ul li{list-style: none}
 	},
 
 	handle: 'p', // 可触发拖动事件的区域
-	snap: 'parent', // 磁铁，直接 #id .class都可以
+	snap: 'parent', //  true，#id .class 磁铁，直接 #id .class都可以
 	stack: '#boxB', // 控制z-index，参数直接填想要覆盖的其他区域的 id或者类就行了
-	opacity: 0.5 // 在拖动的时候的透明度（灵魂出窍）
+	opacity: 0.5, // 在拖动的时候的透明度（灵魂出窍）
+
+	addClasses: false, // 设置为false，在被拖动的元素上就不会被添加ui-draggable类
+
+	helper: 'clone',
+
+	// which element the draggable helper should be appended to while dragging
+	//appendTo: 'body',
+
+	stack: '.btn',
+
+//	delay: 300, // 鼠标拖动后元素延迟拖动
+
+//	disabled: true, // 取消拖动咯
+
+	distance: 100, // 鼠标移动最短有效距离，大于这个有效距离才会拖动
+
+	grid: [100, 50], // 跳跃拖动，每次移动距离为 x px, y px
+
+	refreshPositions: true, // 这个很消耗性能，最好不用
+
+	revertDuration: 600, // 返回的延迟
+
+	snapMode: 'inner', // outer,both在外边框吸附等
+
+	snapTolerance: 30,  // 吸附范围
 })
 
 </pre>

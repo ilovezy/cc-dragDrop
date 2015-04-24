@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1; user-scalable=no">
+<title>无标题文档</title>
+<link rel="stylesheet" href="bootstrap-3.2.0-dist/css/bootstrap.min.css" />
+</head>
+
+<body>
+
+<div class="container">
+<h2 class="text-center"></h2>
+<div class="well">
+	<span class="btn btn-default">hello</span>
+	<span class="btn btn-warning">hello</span>
+	<span class="btn btn-danger">hello</span>
+</div>
+<div class="well tryCancel">
+	<p id="cancel" class="alert alert-warning">点我拉不动奥</p>
+	<p id="notCancel" class="alert alert-info">点我才可以拉动的</p>
+</div>
+</div>
+
+<script src="jquery-1.11.1.min.js"></script>
+<script src="bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
+<script src="jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+<script type="text/javascript">
+'use strict'
+
+$('.btn').draggable({
+	addClasses: false, // 设置为false，在被拖动的元素上就不会被添加ui-draggable类
+
+	helper: 'clone',
+
+	// which element the draggable helper should be appended to while dragging
+	//appendTo: 'body',
+
+//	containment: 'parent',
+
+	stack: '.btn',
+
+//	delay: 300, // 鼠标拖动后元素延迟拖动
+
+//	disabled: true, // 取消拖动咯
+
+	distance: 100, // 鼠标移动最短有效距离，大于这个有效距离才会拖动
+
+	grid: [100, 50], // 跳跃拖动，每次移动距离为 x px, y px
+
+	refreshPositions: true, // 这个很消耗性能，最好不用
+
+	revert: true,
+	// 是否返回原地， 设为 invalid之后，在被拖到 dropped元素内就不会返回了
+
+	revertDuration: 600, // 返回的延迟
+
+	snap: true, //可以设置为 true对其他所有可拖动元素都有磁铁效果,或者指定某个元素
+
+	snapMode: 'inner', // outer,both在外边框吸附等
+
+	snapTolerance: 30,  // 吸附范围
+
+	stack: '.btn' // 设置 z-index在最上层，最好总是设置为当前拖动元素就行
+
+
+})
+
+$('div.tryCancel').draggable({
+	cancel: '#cancel'
+})
+
+</script>
+
+</body>
+</html>

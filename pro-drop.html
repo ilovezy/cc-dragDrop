@@ -67,7 +67,13 @@ $('#droppable').droppable({
 	// 在可拖动元素被拖动的时候可以添加的class
 	activeClass: 'bg-primary',
 
-	hoverClass: 'bg-danger'
+	hoverClass: 'bg-danger',
+
+	addClasses: false, // 设置为false防止 ui-droppable 的类被添加
+
+	tolerance: 'fit' // fit intersect pointer touch
+	// 设置被触发条件，具体指被拖动物体到droppable元素的多少范围内
+
 
 })
 

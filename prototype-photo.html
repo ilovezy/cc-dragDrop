@@ -39,7 +39,6 @@ ul li{float: left; margin: 10px; overflow: hidden; height: 180px;}
 	<div class="col-sm-6">
 	<h3>这里就是需要修改的文件</h3>
 		<ul id="trash" class="well min-height-300">
-
 		</ul>
 	</div>
 </div>
@@ -56,13 +55,13 @@ var $gallery = $('#gallery'),
 	$trash = $('#trash')
 
 $gallery.children('li').draggable({
-	opacity: 0.5, // 在拖动的时候的透明度（灵魂出窍）
+	opacity: 0.6, // 在拖动的时候的透明度（灵魂出窍）
 	revert: 'invalid',
 	containment: 'container',
 	helper: 'clone',
 	cursor: 'move',
 	stack: 'li', // 堆叠，即让元素显示在 z-index 最前面
-	snap: 'ul'
+	snap: 'ul',
 })
 
 $trash.droppable({
